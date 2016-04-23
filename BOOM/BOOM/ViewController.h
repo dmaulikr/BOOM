@@ -8,10 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 
 
+#pragma - Images
 @property (weak, nonatomic) IBOutlet UIImageView *soundWaveImg;
+@property (weak, nonatomic) IBOutlet UIImageView *timeGraphImg;
+
+#pragma - Buttons
+@property (weak, nonatomic) IBOutlet UIButton *lowest_height_button;
+@property (weak, nonatomic) IBOutlet UIButton *middle_height_button;
+@property (weak, nonatomic) IBOutlet UIButton *highest_height_button;
+
+@property (weak, nonatomic) IBOutlet UIButton *f1_button;
+@property (weak, nonatomic) IBOutlet UIButton *d1_button;
+@property (weak, nonatomic) IBOutlet UIButton *n1_button;
+@property (weak, nonatomic) IBOutlet UIButton *n2_button;
+@property (weak, nonatomic) IBOutlet UIButton *n3_button;
+
+@property (weak, nonatomic) IBOutlet UIButton *holo_button;
+
+#pragma - Text Field
+@property (weak, nonatomic) IBOutlet UITextField *dB_textField;
 
 
 @end

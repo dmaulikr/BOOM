@@ -17,6 +17,8 @@
 		B8F7E1711CCAFBC6003EDA4C /* BOOMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F7E1701CCAFBC6003EDA4C /* BOOMUITests.m */; };
 		B8F7E1811CCB0F0A003EDA4C /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B8F7E1801CCB0F0A003EDA4C /* image.jpeg */; };
 		B8F7E1831CCB10A7003EDA4C /* f1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8F7E1821CCB10A7003EDA4C /* f1.wav */; };
+		B8F7E1881CCB4CA3003EDA4C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F7E1871CCB4CA3003EDA4C /* map.png */; };
+		B8F7E18A1CCB4DB6003EDA4C /* jet.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F7E1891CCB4DB6003EDA4C /* jet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		B8F7E17E1CCB0B63003EDA4C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B8F7E1801CCB0F0A003EDA4C /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		B8F7E1821CCB10A7003EDA4C /* f1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f1.wav; sourceTree = "<group>"; };
+		B8F7E1871CCB4CA3003EDA4C /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		B8F7E1891CCB4DB6003EDA4C /* jet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 		B8F7E14B1CCAFBC6003EDA4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8F7E1871CCB4CA3003EDA4C /* map.png */,
+				B8F7E1891CCB4DB6003EDA4C /* jet.png */,
 				B8F7E1801CCB0F0A003EDA4C /* image.jpeg */,
 				B8F7E1821CCB10A7003EDA4C /* f1.wav */,
 				B8F7E14C1CCAFBC6003EDA4C /* main.m */,
@@ -254,11 +260,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F7E1881CCB4CA3003EDA4C /* map.png in Resources */,
 				B8F7E1831CCB10A7003EDA4C /* f1.wav in Resources */,
 				B8F7E15B1CCAFBC6003EDA4C /* LaunchScreen.storyboard in Resources */,
 				B8F7E1811CCB0F0A003EDA4C /* image.jpeg in Resources */,
 				B8F7E1581CCAFBC6003EDA4C /* Assets.xcassets in Resources */,
 				B8F7E1561CCAFBC6003EDA4C /* Main.storyboard in Resources */,
+				B8F7E18A1CCB4DB6003EDA4C /* jet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +527,7 @@
 				B8F7E1771CCAFBC6003EDA4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F7E1781CCAFBC6003EDA4C /* Build configuration list for PBXNativeTarget "BOOMTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +536,7 @@
 				B8F7E17A1CCAFBC6003EDA4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F7E17B1CCAFBC6003EDA4C /* Build configuration list for PBXNativeTarget "BOOMUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +545,7 @@
 				B8F7E17D1CCAFBC6003EDA4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
