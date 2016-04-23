@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8DB2C291CCBDFEC00199ACC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F7E17E1CCB0B63003EDA4C /* AVFoundation.framework */; };
+		B8DB2C2B1CCBE0E700199ACC /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DB2C2A1CCBE0E700199ACC /* song.mp3 */; };
+		B8DB2C2D1CCBEE2B00199ACC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DB2C2C1CCBEE2B00199ACC /* MediaPlayer.framework */; };
+		B8DB2C2F1CCBF35C00199ACC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DB2C2E1CCBF35C00199ACC /* AudioToolbox.framework */; };
 		B8F7E14D1CCAFBC6003EDA4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F7E14C1CCAFBC6003EDA4C /* main.m */; };
 		B8F7E1501CCAFBC6003EDA4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F7E14F1CCAFBC6003EDA4C /* AppDelegate.m */; };
 		B8F7E1531CCAFBC6003EDA4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F7E1521CCAFBC6003EDA4C /* ViewController.m */; };
@@ -39,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8DB2C2A1CCBE0E700199ACC /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		B8DB2C2C1CCBEE2B00199ACC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B8DB2C2E1CCBF35C00199ACC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B8F7E1481CCAFBC6003EDA4C /* BOOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F7E14C1CCAFBC6003EDA4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8F7E14E1CCAFBC6003EDA4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DB2C2F1CCBF35C00199ACC /* AudioToolbox.framework in Frameworks */,
+				B8DB2C2D1CCBEE2B00199ACC /* MediaPlayer.framework in Frameworks */,
+				B8DB2C291CCBDFEC00199ACC /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +100,8 @@
 		B8F7E13F1CCAFBC6003EDA4C = {
 			isa = PBXGroup;
 			children = (
+				B8DB2C2E1CCBF35C00199ACC /* AudioToolbox.framework */,
+				B8DB2C2C1CCBEE2B00199ACC /* MediaPlayer.framework */,
 				B8F7E17E1CCB0B63003EDA4C /* AVFoundation.framework */,
 				B8F7E14A1CCAFBC6003EDA4C /* BOOM */,
 				B8F7E1641CCAFBC6003EDA4C /* BOOMTests */,
@@ -127,6 +139,7 @@
 		B8F7E14B1CCAFBC6003EDA4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8DB2C2A1CCBE0E700199ACC /* song.mp3 */,
 				B8F7E1871CCB4CA3003EDA4C /* map.png */,
 				B8F7E1891CCB4DB6003EDA4C /* jet.png */,
 				B8F7E1801CCB0F0A003EDA4C /* image.jpeg */,
@@ -265,6 +278,7 @@
 				B8F7E15B1CCAFBC6003EDA4C /* LaunchScreen.storyboard in Resources */,
 				B8F7E1811CCB0F0A003EDA4C /* image.jpeg in Resources */,
 				B8F7E1581CCAFBC6003EDA4C /* Assets.xcassets in Resources */,
+				B8DB2C2B1CCBE0E700199ACC /* song.mp3 in Resources */,
 				B8F7E1561CCAFBC6003EDA4C /* Main.storyboard in Resources */,
 				B8F7E18A1CCB4DB6003EDA4C /* jet.png in Resources */,
 			);

@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="height" constant="20" id="VUZ-NF-RbU"/>
                                     <constraint firstAttribute="width" constant="20" id="xbf-YE-j1m"/>
                                 </constraints>
-                                <state key="normal" image="jet.png"/>
+                                <state key="normal" image="image.jpeg"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="VUZ-NF-RbU"/>
@@ -350,6 +350,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image.jpeg" width="512" height="564"/>
         <image name="jet.png" width="512" height="512"/>
         <image name="map.png" width="521" height="614"/>
     </resources>

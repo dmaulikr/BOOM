@@ -10,6 +10,10 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) AVAudioPlayer *player;
+@property (nonatomic, strong) UISlider *volumeSlider;
+@property (nonatomic, strong) MPVolumeView *volView;
+
 @end
 
 @implementation ViewController
@@ -20,6 +24,40 @@
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.soundWaveImg setImage:[UIImage imageNamed:@"map.png"]];
     [self.timeGraphImg setImage:[UIImage imageNamed:@"image.jpeg"]];
+    
+    // hide the hardware volume slider
+//    UIImage *thumb = [[UIImage alloc] initWithCIImage:[UIImage imageNamed:@"volumeHider"].CIImage scale:0.0 orientation:UIImageOrientationUp];
+    
+//    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame: CGRectZero];
+//    volumeView.showsRouteButton = NO;
+//    volumeView.showsVolumeSlider = NO;
+////    [volumeView setVolumeThumbImage:thumb forState:UIControlStateNormal];
+////    [volumeView setMinimumVolumeSliderImage:thumb forState:UIControlStateNormal];
+////    [volumeView setMaximumVolumeSliderImage:thumb forState:UIControlStateNormal];
+//    [self.view addSubview:volumeView];
+//    
+//    __weak __typeof(self)weakSelf = self;
+//    [[volumeView subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        if ([obj isKindOfClass:[UISlider class]]) {
+//            __strong __typeof(weakSelf)strongSelf = weakSelf;
+//            strongSelf.volumeSlider = obj;
+//            *stop = YES;
+//        }
+//    }];
+    
+    self.volView = [[MPVolumeView alloc] init];
+    [self.view addSubview:self.volView];
+    self.volView.hidden = YES;
+    
+    __weak __typeof(self)weakSelf = self;
+    [[self.volView subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[UISlider class]]) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            strongSelf.volumeSlider = obj;
+            *stop = YES;
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,10 +65,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)refreshVolumeView {
+    [self.volView willMoveToSuperview:self.view];
+    [self.volView didMoveToSuperview];
+}
+
 
 - (IBAction)lowest_height_pressed:(id)sender {
     // Present spinner to show loading - randomize wait time to 0.2s to 2s
     // Play volume at respective level
+    
+    
+    
     // Vibrate at respective pattern
     // Display respective contour
     // Update respective dB value
@@ -38,11 +84,58 @@
 }
 
 - (IBAction)middle_height_pressed:(id)sender {
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
+                               [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL
+                                                                   error:nil];
+    self.player.delegate = self;
+    self.player.numberOfLoops = 0; //Once
+    [self.player setVolume:1.0];
+    
+    self.volumeSlider.value = 1.0f;
+    self.volView.hidden = NO;
+    [self refreshVolumeView];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+    
+    [self.player play];
+    
+    //Vibrate
+    for (int i = 1; i < 10; i++) {
+        [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.1f];
+    }
 }
 
 - (IBAction)highest_height_pressed:(id)sender {
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
+                               [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL
+                                                         error:nil];
+    self.player.delegate = self;
+    self.player.numberOfLoops = 0; //Once
+    [self.player setVolume:0.1];
+    
+    self.volumeSlider.value = 0.3f;
+    self.volView.hidden = NO;
+    [self refreshVolumeView];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+    
+    [self.player play];
+    
+    //Vibrate
+    for (int i = 1; i < 2; i++) {
+        [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.0f];
+    }
 }
 
+-(void)vibe:(id)sender {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+}
 
 - (IBAction)f1_pressed:(id)sender {
     // Display respective time graph
