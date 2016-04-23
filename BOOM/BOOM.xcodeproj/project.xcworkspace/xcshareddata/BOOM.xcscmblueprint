@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5CABDCDEB864962EDA121353753D39B565CDC6BB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5CABDCDEB864962EDA121353753D39B565CDC6BB" : 0,
+    "E8778AAF9FD7D9EEA0BF28299014F68427337FBE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5FE4B422-D009-4003-B3CC-F9594E5013F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5CABDCDEB864962EDA121353753D39B565CDC6BB" : "BOOM\/",
+    "E8778AAF9FD7D9EEA0BF28299014F68427337FBE" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BOOM",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BOOM\/BOOM.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matraj\/BOOM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5CABDCDEB864962EDA121353753D39B565CDC6BB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matraj\/BOOM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E8778AAF9FD7D9EEA0BF28299014F68427337FBE"
+    }
+  ]
+}
