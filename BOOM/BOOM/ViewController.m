@@ -30,10 +30,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view, typically from a nib.
-//    [self.soundWaveImg setImage:[UIImage imageNamed:@"map.png"]];
+    // Do any additional setup after loading the view, typically from a nib
     [self.navigationController.navigationBar setBackgroundColor:[UIColor darkGrayColor]];
+    
+    // Setup default state
     self.state = f1;
+    
+    
     // hide the hardware volume slider
 //    UIImage *thumb = [[UIImage alloc] initWithCIImage:[UIImage imageNamed:@"volumeHider"].CIImage scale:0.0 orientation:UIImageOrientationUp];
     
@@ -105,39 +108,27 @@
     [self.middle_contour setHidden:NO];
     
     if ([self.state isEqualToString:f1]) {
-        [self animateContourAtDuration:0.5f withImage:self.middle_contour];
+        
+        // Set Animation
+        [self animateContourAtDuration:0.2f withImage:self.middle_contour];
+        
+        // Set Audio
+        [self playAudioFile:@"f1.wav" withVolume:1.0f];
+        
+        // Set Vibration
+        [self vibrateFor:3];
+        
+        // Set dB
+        [self.dB_textField setText:@"90"];
     } else if ([self.state isEqualToString:d1]) {
         
+    } else if ([self.state isEqualToString:n1]) {
+        
+    } else if ([self.state isEqualToString:n2]) {
+        
+    } else if ([self.state isEqualToString:n3]) {
+        
     }
-
-    
-    // Create method that takes file path, volumeSlider float
-    NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
-                               [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL
-                                                                   error:nil];
-    self.player.delegate = self;
-    self.player.numberOfLoops = 0; //Once
-    [self.player setVolume:1.0];
-    
-    self.volumeSlider.value = 1.0f;
-    self.volView.hidden = NO;
-    [self refreshVolumeView];
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-    
-    [self.player play];
-    
-    //Vibrate
-    // Create a method that takes a vibration number and has if else statments for below
-    for (int i = 1; i < 10; i++) {
-        [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.1f];
-    }
-    
-    // Set dB
-    [self.dB_textField setText:@"90"];
 }
 
 - (IBAction)highest_height_pressed:(id)sender {
@@ -150,35 +141,21 @@
     [self.middle_contour setHidden:YES];
     
     [self.highest_contour setHidden:NO];
+    
     if ([self.state isEqualToString:f1]) {
         [self animateContourAtDuration:1.5f withImage:self.highest_contour];
+        [self playAudioFile:@"f1.wav" withVolume:0.3f];
+        [self vibrateFor:1];
+        [self.dB_textField setText:@"35.66"];
+    } else if ([self.state isEqualToString:d1]) {
+        
+    } else if ([self.state isEqualToString:n1]) {
+        
+    } else if ([self.state isEqualToString:n2]) {
+        
+    } else if ([self.state isEqualToString:n3]) {
+        
     }
-    
-    NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
-                               [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL
-                                                         error:nil];
-    self.player.delegate = self;
-    self.player.numberOfLoops = 0; //Once
-    [self.player setVolume:0.1];
-    
-    self.volumeSlider.value = 0.3f;
-    self.volView.hidden = NO;
-    [self refreshVolumeView];
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-    
-    [self.player play];
-    
-    //Vibrate
-    for (int i = 1; i < 2; i++) {
-        [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.0f];
-    }
-    
-    // Set dB
-    [self.dB_textField setText:@"35.66"];
 }
 
 -(void)vibe:(id)sender {
@@ -186,16 +163,10 @@
 }
 
 - (IBAction)f1_pressed:(id)sender {
-    // Create method to set up map overlay imgs/gifs
-    [self.middle_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
-    [self.highest_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
     
-    [self.highest_contour stopAnimating];
-    [self.highest_contour setHidden:YES];
-    [self.middle_contour stopAnimating];
-    [self.middle_contour setHidden:YES];
+    // Set up page
+    [self setupPageForeSound:f1 withGraph:@"f1_graph.jpeg"];
     
-    // Display respective time graph
     // Highlight Button
     // De-Highlight Other Buttons
     
@@ -253,6 +224,83 @@
     imageView.animationDuration = duration;
     imageView.animationRepeatCount = 0;
     [imageView startAnimating];
+}
+
+- (void)playAudioFile:(NSString *)file withVolume:(float)volume {
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/%@",
+                               [[NSBundle mainBundle] resourcePath], file];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL
+                                                         error:nil];
+    self.player.delegate = self;
+    self.player.numberOfLoops = 0; //Once
+    [self.player setVolume:volume];
+    
+    self.volumeSlider.value = volume;
+    self.volView.hidden = NO;
+    [self refreshVolumeView];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+    
+    [self.player play];
+}
+
+- (void)vibrateFor:(float)vibrations{
+    if (vibrations == 1) {
+        //Vibrate
+        for (int i = 1; i < 2; i++) {
+            [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.0f];
+        }
+    } else if (vibrations == 2) {
+        //Vibrate
+        for (int i = 1; i < 5; i++) {
+            [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.1f];
+        }
+    } else if (vibrations == 3) {
+        //Vibrate
+        for (int i = 1; i < 10; i++) {
+            [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.1f];
+        }
+    }
+}
+
+- (void)setupPageForeSound:(NSString *)sound withGraph:(NSString *)graphFile {
+    
+//    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(180, 300, 30, 30)];
+//    [activity setBackgroundColor:[UIColor lightGrayColor]];
+//    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//    [self.view addSubview:activity];
+    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.color = [UIColor darkGrayColor];
+    activityView.center=self.view.center;
+    
+    [activityView startAnimating];
+    
+    [self.view addSubview:activityView];
+    
+    float randomNum = ((float)rand() / RAND_MAX) * 2.0;
+    
+    [activityView performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:randomNum];
+    
+    
+    // Set State
+    self.state = sound;
+    
+    [self.timeGraphImg setImage:[UIImage imageNamed:graphFile]];
+    
+    // Create method to set up map overlay imgs/gifs
+    [self.middle_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
+    [self.highest_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
+    
+    [self.highest_contour stopAnimating];
+    [self.highest_contour setHidden:YES];
+    [self.middle_contour stopAnimating];
+    [self.middle_contour setHidden:YES];
+    [self.dB_textField setText:@"- dB"];
+    
+//    wait(1);
+//    [activity stopAnimating];
 }
 
 @end
