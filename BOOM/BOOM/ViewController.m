@@ -23,7 +23,7 @@
     
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.soundWaveImg setImage:[UIImage imageNamed:@"map.png"]];
-    [self.timeGraphImg setImage:[UIImage imageNamed:@"image.jpeg"]];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor darkGrayColor]];
     
     // hide the hardware volume slider
 //    UIImage *thumb = [[UIImage alloc] initWithCIImage:[UIImage imageNamed:@"volumeHider"].CIImage scale:0.0 orientation:UIImageOrientationUp];
@@ -84,6 +84,12 @@
 }
 
 - (IBAction)middle_height_pressed:(id)sender {
+    
+    // Create method to set up map overlay imgs
+    [self.middle_height_button setImage:[UIImage imageNamed:@"transport.png"] forState:UIControlStateNormal];
+    [self.highest_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
+    
+    // Create method that takes file path, volumeSlider float
     NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
                                [[NSBundle mainBundle] resourcePath]];
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -103,12 +109,21 @@
     [self.player play];
     
     //Vibrate
+    // Create a method that takes a vibration number and has if else statments for below
     for (int i = 1; i < 10; i++) {
         [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.1f];
     }
+    
+    // Set dB
+    [self.dB_textField setText:@"90"];
 }
 
 - (IBAction)highest_height_pressed:(id)sender {
+    
+    // Create method to set up map overlay imgs
+    [self.middle_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
+    [self.highest_height_button setImage:[UIImage imageNamed:@"transport.png"] forState:UIControlStateNormal];
+    
     NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
                                [[NSBundle mainBundle] resourcePath]];
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -131,6 +146,9 @@
     for (int i = 1; i < 2; i++) {
         [self performSelector:@selector(vibe:) withObject:self afterDelay:i *0.0f];
     }
+    
+    // Set dB
+    [self.dB_textField setText:@"35.66"];
 }
 
 -(void)vibe:(id)sender {
