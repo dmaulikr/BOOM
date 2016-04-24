@@ -17,6 +17,8 @@
 #pragma - Images
 @property (weak, nonatomic) IBOutlet UIImageView *soundWaveImg;
 @property (weak, nonatomic) IBOutlet UIImageView *timeGraphImg;
+@property (weak, nonatomic) IBOutlet UIImageView *highest_contour;
+@property (weak, nonatomic) IBOutlet UIImageView *middle_contour;
 
 #pragma - Buttons
 @property (weak, nonatomic) IBOutlet UIButton *lowest_height_button;

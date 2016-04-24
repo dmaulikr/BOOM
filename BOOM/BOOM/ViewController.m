@@ -89,6 +89,31 @@
     [self.middle_height_button setImage:[UIImage imageNamed:@"transport.png"] forState:UIControlStateNormal];
     [self.highest_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
     
+    // Create method for displaying animation at different speeds
+    [self.highest_contour stopAnimating];
+    [self.highest_contour setHidden:YES];
+    
+    [self.middle_contour setHidden:NO];
+    self.middle_contour.animationImages = [NSArray arrayWithObjects:
+                                         [UIImage imageNamed:@"frame_0.gif"],
+                                         [UIImage imageNamed:@"frame_1.gif"],
+                                         [UIImage imageNamed:@"frame_2.gif"],
+                                         [UIImage imageNamed:@"frame_3.gif"],
+                                         [UIImage imageNamed:@"frame_4.gif"],
+                                         [UIImage imageNamed:@"frame_5.gif"],
+                                         [UIImage imageNamed:@"frame_6.gif"],
+                                         [UIImage imageNamed:@"frame_7.gif"],
+                                         [UIImage imageNamed:@"frame_8.gif"],
+                                         [UIImage imageNamed:@"frame_9.gif"],
+                                         [UIImage imageNamed:@"frame_10.gif"],
+                                         [UIImage imageNamed:@"frame_11.gif"],
+                                         [UIImage imageNamed:@"frame_12.gif"],
+                                         [UIImage imageNamed:@"frame_13.gif"],
+                                         [UIImage imageNamed:@"frame_14.gif"],nil];
+    self.middle_contour.animationDuration = 0.5f;
+    self.middle_contour.animationRepeatCount = 0;
+    [self.middle_contour startAnimating];
+    
     // Create method that takes file path, volumeSlider float
     NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
                                [[NSBundle mainBundle] resourcePath]];
@@ -123,6 +148,30 @@
     // Create method to set up map overlay imgs
     [self.middle_height_button setImage:[UIImage imageNamed:@"shapes.png"] forState:UIControlStateNormal];
     [self.highest_height_button setImage:[UIImage imageNamed:@"transport.png"] forState:UIControlStateNormal];
+    
+    [self.middle_contour stopAnimating];
+    [self.middle_contour setHidden:YES];
+    
+    [self.highest_contour setHidden:NO];
+    self.highest_contour.animationImages = [NSArray arrayWithObjects:
+                                           [UIImage imageNamed:@"frame_0.gif"],
+                                           [UIImage imageNamed:@"frame_1.gif"],
+                                           [UIImage imageNamed:@"frame_2.gif"],
+                                           [UIImage imageNamed:@"frame_3.gif"],
+                                           [UIImage imageNamed:@"frame_4.gif"],
+                                           [UIImage imageNamed:@"frame_5.gif"],
+                                           [UIImage imageNamed:@"frame_6.gif"],
+                                           [UIImage imageNamed:@"frame_7.gif"],
+                                           [UIImage imageNamed:@"frame_8.gif"],
+                                           [UIImage imageNamed:@"frame_9.gif"],
+                                           [UIImage imageNamed:@"frame_10.gif"],
+                                           [UIImage imageNamed:@"frame_11.gif"],
+                                           [UIImage imageNamed:@"frame_12.gif"],
+                                           [UIImage imageNamed:@"frame_13.gif"],
+                                           [UIImage imageNamed:@"frame_14.gif"],nil];
+    self.highest_contour.animationDuration = 1.5f;
+    self.highest_contour.animationRepeatCount = 0;
+    [self.highest_contour startAnimating];
     
     NSString *soundFilePath = [NSString stringWithFormat:@"%@/f1.wav",
                                [[NSBundle mainBundle] resourcePath]];
