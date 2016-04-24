@@ -21,7 +21,8 @@
 #define n2 @"n2"
 #define n3 @"n3"
 
-
+#define MINIMUM_SCALE 0.5
+#define MAXIMUM_SCALE 6.0
 
 @end
 
@@ -35,7 +36,8 @@
     
     // Setup default state
     self.state = f1;
-    
+    [self.f1_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.f1_button layer] setCornerRadius:8.0f];
     
     // hide the hardware volume slider
 //    UIImage *thumb = [[UIImage alloc] initWithCIImage:[UIImage imageNamed:@"volumeHider"].CIImage scale:0.0 orientation:UIImageOrientationUp];
@@ -122,11 +124,31 @@
         [self.dB_textField setText:@"90"];
     } else if ([self.state isEqualToString:d1]) {
         
+        [self animateContourAtDuration:0.64f withImage:self.middle_contour];
+        [self playAudioFile:@"d1.wav" withVolume:0.78f];
+        [self vibrateFor:2];
+        [self.dB_textField setText:@"72.5"];
+        
     } else if ([self.state isEqualToString:n1]) {
+        
+        [self animateContourAtDuration:0.5f withImage:self.middle_contour];
+        [self playAudioFile:@"n1.wav" withVolume:0.85f];
+        [self vibrateFor:2];
+        [self.dB_textField setText:@"77.8"];
         
     } else if ([self.state isEqualToString:n2]) {
         
+        [self animateContourAtDuration:0.35f withImage:self.middle_contour];
+        [self playAudioFile:@"n2.wav" withVolume:0.93f];
+        [self vibrateFor:3];
+        [self.dB_textField setText:@"84.3"];
+        
     } else if ([self.state isEqualToString:n3]) {
+        
+        [self animateContourAtDuration:0.48f withImage:self.middle_contour];
+        [self playAudioFile:@"n3.wav" withVolume:0.86f];
+        [self vibrateFor:2];
+        [self.dB_textField setText:@"78.8"];
         
     }
 }
@@ -143,17 +165,37 @@
     [self.highest_contour setHidden:NO];
     
     if ([self.state isEqualToString:f1]) {
-        [self animateContourAtDuration:1.5f withImage:self.highest_contour];
-        [self playAudioFile:@"f1.wav" withVolume:0.3f];
+        [self animateContourAtDuration:1.56f withImage:self.highest_contour];
+        [self playAudioFile:@"f1.wav" withVolume:0.38f];
         [self vibrateFor:1];
         [self.dB_textField setText:@"35.66"];
     } else if ([self.state isEqualToString:d1]) {
-        
+
+        [self animateContourAtDuration:2.0f withImage:self.highest_contour];
+        [self playAudioFile:@"d1.wav" withVolume:0.1f];
+        [self vibrateFor:0];
+        [self.dB_textField setText:@"18"];
+
     } else if ([self.state isEqualToString:n1]) {
+        
+        [self animateContourAtDuration:1.86f withImage:self.highest_contour];
+        [self playAudioFile:@"n1.wav" withVolume:0.27f];
+        [self vibrateFor:1];
+        [self.dB_textField setText:@"23.5"];
         
     } else if ([self.state isEqualToString:n2]) {
         
+        [self animateContourAtDuration:1.7f withImage:self.highest_contour];
+        [self playAudioFile:@"n2.wav" withVolume:0.33f];
+        [self vibrateFor:1];
+        [self.dB_textField setText:@"30"];
+        
     } else if ([self.state isEqualToString:n3]) {
+        
+        [self animateContourAtDuration:1.84f withImage:self.highest_contour];
+        [self playAudioFile:@"n3.wav" withVolume:0.28f];
+        [self vibrateFor:1];
+        [self.dB_textField setText:@"24.5"];
         
     }
 }
@@ -169,38 +211,96 @@
     
     // Highlight Button
     // De-Highlight Other Buttons
+    [self.f1_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.f1_button layer] setCornerRadius:8.0f];
     
+    [self.d1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n2_button setBackgroundColor:[UIColor clearColor]];
+    [self.n3_button setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)d1_pressed:(id)sender {
+    
+    // Set up page
+    [self setupPageForeSound:d1 withGraph:@"d1_graph.jpeg"];
+    
+    // Highlight Button
+    // De-Highlight Other Buttons
+    [self.d1_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.d1_button layer] setCornerRadius:8.0f];
+    
+    [self.f1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n2_button setBackgroundColor:[UIColor clearColor]];
+    [self.n3_button setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)n1_pressed:(id)sender {
+    
+    // Set up page
+    [self setupPageForeSound:n1 withGraph:@"n1_graph.jpeg"];
+    
+    // Highlight Button
+    // De-Highlight Other Buttons
+    [self.n1_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.n1_button layer] setCornerRadius:8.0f];
+    
+    [self.d1_button setBackgroundColor:[UIColor clearColor]];
+    [self.f1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n2_button setBackgroundColor:[UIColor clearColor]];
+    [self.n3_button setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)n2_pressed:(id)sender {
+    
+    // Set up page
+    [self setupPageForeSound:n2 withGraph:@"n2_graph.jpg"];
+    
+    // Highlight Button
+    // De-Highlight Other Buttons
+    [self.n2_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.n2_button layer] setCornerRadius:8.0f];
+    
+    [self.d1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n1_button setBackgroundColor:[UIColor clearColor]];
+    [self.f1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n3_button setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)n3_pressed:(id)sender {
+    
+    // Set up page
+    [self setupPageForeSound:n3 withGraph:@"n3_graph.jpg"];
+    
+    // Highlight Button
+    // De-Highlight Other Buttons
+    [self.n3_button setBackgroundColor:[UIColor darkGrayColor]];
+    [[self.n3_button layer] setCornerRadius:8.0f];
+    
+    [self.d1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n1_button setBackgroundColor:[UIColor clearColor]];
+    [self.n2_button setBackgroundColor:[UIColor clearColor]];
+    [self.f1_button setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)holo_pressed:(id)sender {
-    UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"Super Cool Holo"
-                                  message:@"Coming Soon!"
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* ok = [UIAlertAction
-                         actionWithTitle:@"OK"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             //Do some thing here
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                             
-                         }];
-    [alert addAction:ok]; // add action to uialertcontroller
-    [self presentViewController:alert animated:YES completion:nil];
+//    UIAlertController * alert=   [UIAlertController
+//                                  alertControllerWithTitle:@"Super Cool Holo"
+//                                  message:@"Coming Soon!"
+//                                  preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UIAlertAction* ok = [UIAlertAction
+//                         actionWithTitle:@"OK"
+//                         style:UIAlertActionStyleDefault
+//                         handler:^(UIAlertAction * action)
+//                         {
+//                             //Do some thing here
+//                             [alert dismissViewControllerAnimated:YES completion:nil];
+//                             
+//                         }];
+//    [alert addAction:ok]; // add action to uialertcontroller
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma - mark
@@ -283,7 +383,6 @@
     
     [activityView performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:randomNum];
     
-    
     // Set State
     self.state = sound;
     
@@ -301,6 +400,27 @@
     
 //    wait(1);
 //    [activity stopAnimating];
+}
+
+- (void)pinch:(UIPinchGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateEnded
+        || gesture.state == UIGestureRecognizerStateChanged) {
+        NSLog(@"gesture.scale = %f", gesture.scale);
+        
+        CGFloat currentScale = self.timeGraphImg.frame.size.width / self.timeGraphImg.bounds.size.width;
+        CGFloat newScale = currentScale * gesture.scale;
+        
+        if (newScale < MINIMUM_SCALE) {
+            newScale = MINIMUM_SCALE;
+        }
+        if (newScale > MAXIMUM_SCALE) {
+            newScale = MAXIMUM_SCALE;
+        }
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(newScale, newScale);
+        self.timeGraphImg.transform = transform;
+        gesture.scale = 1;
+    }
 }
 
 @end
