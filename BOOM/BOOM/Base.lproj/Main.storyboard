@@ -317,31 +317,12 @@
                                 <exclude reference="Rvl-Dg-DHJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Q5-vN-vsV"/>
-                                <exclude reference="Uej-Bh-NFw"/>
-                                <exclude reference="Z2C-Fn-u7G"/>
-                                <exclude reference="sCb-gL-S2G"/>
-                                <exclude reference="djK-WY-gXS"/>
-                                <exclude reference="gOH-sO-Bgh"/>
-                                <exclude reference="DxE-QV-Ff5"/>
-                                <exclude reference="P9n-Pp-Ilk"/>
-                                <exclude reference="RTt-KG-bdR"/>
+                                <exclude reference="9fu-J9-TXb"/>
+                                <exclude reference="OH2-vZ-2kk"/>
+                                <exclude reference="vcZ-Pp-nly"/>
                                 <exclude reference="XZv-eO-cs5"/>
-                                <exclude reference="8k6-iE-ueF"/>
-                                <exclude reference="aXE-PN-sfJ"/>
-                                <exclude reference="vS9-cN-ebc"/>
-                                <exclude reference="1Yw-bS-9zi"/>
-                                <exclude reference="9WH-jc-4Rm"/>
-                                <exclude reference="RQ6-hV-6Kw"/>
-                                <exclude reference="bU9-3l-pAz"/>
-                                <exclude reference="f1v-vs-fJK"/>
-                                <exclude reference="q3J-EJ-rYd"/>
-                                <exclude reference="ybs-9b-IMq"/>
-                                <exclude reference="DD1-ej-4DA"/>
-                                <exclude reference="maw-4F-T6c"/>
                                 <exclude reference="Cnd-6Q-9ML"/>
-                                <exclude reference="PbX-qE-nfk"/>
-                                <exclude reference="tqu-x5-nBd"/>
+                                <exclude reference="vS9-cN-ebc"/>
                                 <exclude reference="0ci-zb-DSs"/>
                                 <exclude reference="CpM-HE-ZH7"/>
                                 <exclude reference="Dji-31-Nu3"/>
@@ -349,9 +330,28 @@
                                 <exclude reference="gbX-Gu-jXa"/>
                                 <exclude reference="ral-jf-5jE"/>
                                 <exclude reference="zeC-ha-6Re"/>
-                                <exclude reference="9fu-J9-TXb"/>
-                                <exclude reference="OH2-vZ-2kk"/>
-                                <exclude reference="vcZ-Pp-nly"/>
+                                <exclude reference="DD1-ej-4DA"/>
+                                <exclude reference="maw-4F-T6c"/>
+                                <exclude reference="8k6-iE-ueF"/>
+                                <exclude reference="aXE-PN-sfJ"/>
+                                <exclude reference="DxE-QV-Ff5"/>
+                                <exclude reference="P9n-Pp-Ilk"/>
+                                <exclude reference="RTt-KG-bdR"/>
+                                <exclude reference="djK-WY-gXS"/>
+                                <exclude reference="gOH-sO-Bgh"/>
+                                <exclude reference="1Yw-bS-9zi"/>
+                                <exclude reference="9WH-jc-4Rm"/>
+                                <exclude reference="RQ6-hV-6Kw"/>
+                                <exclude reference="bU9-3l-pAz"/>
+                                <exclude reference="f1v-vs-fJK"/>
+                                <exclude reference="q3J-EJ-rYd"/>
+                                <exclude reference="ybs-9b-IMq"/>
+                                <exclude reference="0Q5-vN-vsV"/>
+                                <exclude reference="Uej-Bh-NFw"/>
+                                <exclude reference="Z2C-Fn-u7G"/>
+                                <exclude reference="sCb-gL-S2G"/>
+                                <exclude reference="PbX-qE-nfk"/>
+                                <exclude reference="tqu-x5-nBd"/>
                                 <exclude reference="291-nn-tpm"/>
                                 <exclude reference="6Bl-Lq-eyT"/>
                                 <exclude reference="o20-zt-2Hz"/>
@@ -374,31 +374,12 @@
                                 <include reference="Rvl-Dg-DHJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Q5-vN-vsV"/>
-                                <include reference="Uej-Bh-NFw"/>
-                                <include reference="Z2C-Fn-u7G"/>
-                                <include reference="sCb-gL-S2G"/>
-                                <include reference="djK-WY-gXS"/>
-                                <include reference="gOH-sO-Bgh"/>
-                                <include reference="DxE-QV-Ff5"/>
-                                <include reference="P9n-Pp-Ilk"/>
-                                <include reference="RTt-KG-bdR"/>
+                                <include reference="9fu-J9-TXb"/>
+                                <include reference="OH2-vZ-2kk"/>
+                                <include reference="vcZ-Pp-nly"/>
                                 <include reference="XZv-eO-cs5"/>
-                                <include reference="8k6-iE-ueF"/>
-                                <include reference="aXE-PN-sfJ"/>
-                                <include reference="vS9-cN-ebc"/>
-                                <include reference="1Yw-bS-9zi"/>
-                                <include reference="9WH-jc-4Rm"/>
-                                <include reference="RQ6-hV-6Kw"/>
-                                <include reference="bU9-3l-pAz"/>
-                                <include reference="f1v-vs-fJK"/>
-                                <include reference="q3J-EJ-rYd"/>
-                                <include reference="ybs-9b-IMq"/>
-                                <include reference="DD1-ej-4DA"/>
-                                <include reference="maw-4F-T6c"/>
                                 <include reference="Cnd-6Q-9ML"/>
-                                <include reference="PbX-qE-nfk"/>
-                                <include reference="tqu-x5-nBd"/>
+                                <include reference="vS9-cN-ebc"/>
                                 <include reference="0ci-zb-DSs"/>
                                 <include reference="CpM-HE-ZH7"/>
                                 <include reference="Dji-31-Nu3"/>
@@ -406,9 +387,28 @@
                                 <include reference="gbX-Gu-jXa"/>
                                 <include reference="ral-jf-5jE"/>
                                 <include reference="zeC-ha-6Re"/>
-                                <include reference="9fu-J9-TXb"/>
-                                <include reference="OH2-vZ-2kk"/>
-                                <include reference="vcZ-Pp-nly"/>
+                                <include reference="DD1-ej-4DA"/>
+                                <include reference="maw-4F-T6c"/>
+                                <include reference="8k6-iE-ueF"/>
+                                <include reference="aXE-PN-sfJ"/>
+                                <include reference="DxE-QV-Ff5"/>
+                                <include reference="P9n-Pp-Ilk"/>
+                                <include reference="RTt-KG-bdR"/>
+                                <include reference="djK-WY-gXS"/>
+                                <include reference="gOH-sO-Bgh"/>
+                                <include reference="1Yw-bS-9zi"/>
+                                <include reference="9WH-jc-4Rm"/>
+                                <include reference="RQ6-hV-6Kw"/>
+                                <include reference="bU9-3l-pAz"/>
+                                <include reference="f1v-vs-fJK"/>
+                                <include reference="q3J-EJ-rYd"/>
+                                <include reference="ybs-9b-IMq"/>
+                                <include reference="0Q5-vN-vsV"/>
+                                <include reference="Uej-Bh-NFw"/>
+                                <include reference="Z2C-Fn-u7G"/>
+                                <include reference="sCb-gL-S2G"/>
+                                <include reference="PbX-qE-nfk"/>
+                                <include reference="tqu-x5-nBd"/>
                                 <include reference="291-nn-tpm"/>
                                 <include reference="6Bl-Lq-eyT"/>
                                 <include reference="o20-zt-2Hz"/>
@@ -446,9 +446,32 @@
                         <viewControllerLayoutGuide type="bottom" id="kg0-9c-OLU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lmw-fL-myq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwg-Pb-7WE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
+                                </variation>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jwg-Pb-7WE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jwg-Pb-7WE"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="jwg-Pb-7WE" id="tLn-ey-TSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJw-Qx-b1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

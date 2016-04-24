@@ -39,6 +39,7 @@
 		B80CA6AD1CCCB90D0034C0A1 /* n2_graph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B80CA6AC1CCCB90D0034C0A1 /* n2_graph.jpg */; };
 		B80CA6B01CCCBCDD0034C0A1 /* HoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80CA6AF1CCCBCDD0034C0A1 /* HoloViewController.m */; };
 		B8BA1F0F1CCCBFE300D2CBB6 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BA1F0E1CCCBFE300D2CBB6 /* AVKit.framework */; };
+		B8BA1F131CCD0A6E00D2CBB6 /* wav.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8BA1F121CCD0A4500D2CBB6 /* wav.mp4 */; };
 		B8DB2C291CCBDFEC00199ACC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F7E17E1CCB0B63003EDA4C /* AVFoundation.framework */; };
 		B8DB2C2D1CCBEE2B00199ACC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DB2C2C1CCBEE2B00199ACC /* MediaPlayer.framework */; };
 		B8DB2C2F1CCBF35C00199ACC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DB2C2E1CCBF35C00199ACC /* AudioToolbox.framework */; };
@@ -106,6 +107,7 @@
 		B80CA6AE1CCCBCDD0034C0A1 /* HoloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoloViewController.h; sourceTree = "<group>"; };
 		B80CA6AF1CCCBCDD0034C0A1 /* HoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoloViewController.m; sourceTree = "<group>"; };
 		B8BA1F0E1CCCBFE300D2CBB6 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		B8BA1F121CCD0A4500D2CBB6 /* wav.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wav.mp4; sourceTree = "<group>"; };
 		B8DB2C2C1CCBEE2B00199ACC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B8DB2C2E1CCBF35C00199ACC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B8F7E1481CCAFBC6003EDA4C /* BOOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				B80CA6631CCC35D90034C0A1 /* map.png */,
+				B8BA1F121CCD0A4500D2CBB6 /* wav.mp4 */,
 				B80CA66B1CCC3BD50034C0A1 /* astro.png */,
 				B80CA6A11CCCB50E0034C0A1 /* graphs */,
 				B80CA6791CCC4B650034C0A1 /* contour */,
@@ -390,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BA1F131CCD0A6E00D2CBB6 /* wav.mp4 in Resources */,
 				B80CA6641CCC35D90034C0A1 /* map.png in Resources */,
 				B80CA6951CCC4C760034C0A1 /* frame_2.gif in Resources */,
 				B80CA69C1CCCAE130034C0A1 /* n1.wav in Resources */,
